@@ -1,12 +1,17 @@
 from zipline.api import order, record, symbol
-import matplotlib.pyplot as plt
+#used for creating plots and visualizations
+import matplotlib.pyplot as plt 
 
+#function definition that takes in context, a dictionary where you can store and access variables through the trading session
 def initialize(context):
+	#function is empty
     pass
 
 
 def handle_data(context, data):
+	#buy 10 shares of apple stock
     order(symbol('AAPL'), 10)
+	#record the current price of Apple stock
     record(AAPL=data[symbol('AAPL')].price)
 
 """
